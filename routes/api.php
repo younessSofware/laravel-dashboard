@@ -45,7 +45,8 @@ Route::group(['middleware'=> ['auth:sanctum']], function () {
 Route::group(['middleware'=> ['auth:sanctum', 'restrictothers']], function () {
     Route::get('/statistics', function(){
         return response([
-            'clients'=> User::count(),
+            'admins'=> User::where('role', 'like', 0)->count(),
+            'clients'=> User::where('role', 'like', 1)->count(),
             'categories' => Category::count(),
             'events' => event::count(),
             'articles' => Article::count(),
