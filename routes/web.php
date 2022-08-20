@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\ProductController@index');
+Route::get('/', function(){
+    echo 'hello';
+});
 
 
 Auth::routes();
