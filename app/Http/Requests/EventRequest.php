@@ -25,11 +25,11 @@ class EventRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:events|max:255',
+            'type' => 'required|string',
             'date_from' => 'required|date',
-            'date_to' => 'required|date|after:date_from',
-            'details' => 'required|string|min:8|max:500',
-            'location' => 'required|string',
-            'type' => 'required|string'
+            'date_to' => 'date|after:date_from',
+            'details' => 'string|min:8|max:500',
+            'location' => 'string',
         ];
     }
 }
