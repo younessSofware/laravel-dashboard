@@ -14,7 +14,7 @@ class ChangeDefaultValuesEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function ($table) {
-            $table->date('date_to')->nullable()->change();
+            $table->string('date_to')->nullable()->change();
             $table->string('details')->nullable()->change();
             $table->string('location')->nullable()->change();
         });
