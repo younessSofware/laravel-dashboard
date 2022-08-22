@@ -67,8 +67,11 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::find($id)->with('category')->first();
+        $article = Article::with('category')->find($id);
+        // $arr = $event;
         $article->setAttribute('type', $article->category()->get()->first()->name);
+
+        // return array_push($arr, $event->category()->get()->first()->name);
         return $article;
     }
 
