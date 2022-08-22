@@ -27,9 +27,9 @@ class EventRequest extends FormRequest
             'name' => 'required|unique:events|max:255',
             'type' => 'required|string',
             'date_from' => 'required|date',
-            'date_to' => 'optional|date|after:date_from',
-            'details' => 'optional|string|min:8|max:500',
-            'location' => 'optional|string',
+            'date_to' => 'sometimes|date|after:date_from',
+            'details' => 'sometimes|string|min:8|max:500',
+            'location' => 'sometimes|string',
         ];
     }
 }
