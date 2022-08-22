@@ -27,9 +27,9 @@ class RegisterRequest extends FormRequest
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|confirmed|min:8[max:255',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'city' => 'required|string',
-            'sexe' => 'required|string'
+            'phone' => 'sometimes|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'city' => 'sometimes|string',
+            'sexe' => 'sometimes|string'
         ];
     }
 }
